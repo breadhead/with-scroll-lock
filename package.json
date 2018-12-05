@@ -12,8 +12,7 @@
   "scripts": {
     "build": "tsc",
     "prepare": "install-self-peers -- --ignore-scripts && yarn build",
-    "ci": "yarn test && yarn lint",
-    "test": "jest",
+    "ci": "yarn lint",
     "lint": "tslint -p tsconfig.json -c tslint.json"
   },
   "repository": {
@@ -27,7 +26,6 @@
   ],
   "peerDependencies": {
     "@types/react": "^16.7.13",
-    "body-scroll-lock": "^2.6.1",
     "react": "^16.6.3"
   },
   "devDependencies": {
@@ -43,5 +41,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {}
+  "dependencies": {
+    "body-scroll-lock": "^2.6.1"
+  }
 }
