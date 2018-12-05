@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '8'
+- '10'
+cache: yarn
+script: yarn ci
+deploy:
+  provider: npm
+  email: uncleseneca@gmail.com
+  skip_cleanup: true
+  api_key:
+    secure: EHMnDk2+Bn8daSIFUeIA60rusd52coqpO3R0hapw3ZjvugcXqUTArQ9DNKmro2806syPnIiQ0TpP4CTT7VuBNTd1wL2a5QlxpT8LAN2IUTK3eu0oso/51bhaz4FpjjC2cpHLSCSJ8IqFgM3zluAItJYczGPdzEzoc8tMvqMlgoXzhN2hE0a6cLT5mYJmO++cg7bmxRH1SiSe5M7X8vAe3aE2aOc8GaNOUdsdcEQrNThfKXswPC9PbI/anOa4cT9ZYc5I5oEE8Y/0in7drtBlLN/rwwEX2hDenn/YILBQQGkRgdnfdnV4YXm+TA8sSS0EwO2kDUQ/6MsxN/kHkIGs+vWJw+VsXk6YTHnNjyOCYAPE5W03wZ4yYUYuw9cs8w5mWlb6tYmvX1FmxRtz3ERPjQnUf2BsizQPkwtpIwVghHERmU2wev2gvZuOl86+I2e8gA+1ZWC0Uiv2OgBfoJnz5D6Ltd5KrzCvK1jXPn1MDfSwC9Eg8l0jlJlyeQ7vBdqqZm5FSvLnpTttHlK1GXuzghrhMgt90EDIuvWO2j1xDTJmyKDIhyKvqy9M9WnIn6VWgTcJksHBMCcNRaml6wu+55PRBEgBRg6WRQyS2aCXWNb4Tv0dg2ah+hklvRFnt1Oi7F9yXBmWBsfi3JkP0/1iXU3jFmr7+o1jocdPl/c4F2E=
+  on:
+    tags: true
+    repo: breadhead/with-scroll-lock
