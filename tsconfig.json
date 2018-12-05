@@ -1,29 +1,28 @@
 {
   "compilerOptions": {
-    "paths": {
-      "*": [
-        "types/*"
-      ]
-    },
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "outDir": "./dist",
-    "baseUrl": "./lib",
-    "jsx": "preserve",
     "lib": [
-      "dom",
-      "es2017"
+      "es2017",
+      "dom"
     ],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "preserveConstEnums": true,
-    "removeComments": false,
-    "skipLibCheck": true,
+    "module": "commonjs",
+    "declaration": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
     "sourceMap": true,
-    "strict": true,
-    "target": "esnext",
-  }
+    "outDir": "./dist",
+    "baseUrl": "./lib"
+  },
+  "include": [
+    "lib/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }

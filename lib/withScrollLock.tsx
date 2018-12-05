@@ -24,7 +24,7 @@ const withLockScroll = (isElementFixed: boolean = false) =>
 
         return <Component {...this.props} bodyScrolling={bodyScrolling} />
       }
-      private lockBodyScroll = () => {
+      public lockBodyScroll = () => {
         disableBodyScroll()
 
         if (isElementFixed && canUseDOM) {
@@ -32,7 +32,7 @@ const withLockScroll = (isElementFixed: boolean = false) =>
         }
       }
 
-      private unlockBodyScroll = () => {
+      public unlockBodyScroll = () => {
         clearAllBodyScrollLocks()
 
         if (isElementFixed && canUseDOM) {
