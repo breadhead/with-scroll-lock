@@ -1,6 +1,6 @@
 import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock'
-import * as React from 'react'
 import canUseDOM from 'can-use-dom'
+import * as React from 'react'
 
 export interface ScrollLock {
   bodyScrolling: {
