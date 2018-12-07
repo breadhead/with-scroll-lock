@@ -42,6 +42,7 @@
     "access": "public"
   },
   "dependencies": {
-    "body-scroll-lock": "^2.6.1"
+    "body-scroll-lock": "^2.6.1",
+    "can-use-dom": "^0.1.0"
   }
 }
