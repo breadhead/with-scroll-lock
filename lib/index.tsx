@@ -34,7 +34,7 @@ const withLockScroll = (isElementFixed: boolean = false) =>
           // need for mobile safari
           document.body.style.position = 'fixed'
         }
-    
+
         if (isElementFixed && canUseDOM) {
           // need for fixed elements with height more than window height
           document.body.style.position = 'fixed'
