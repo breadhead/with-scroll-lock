@@ -14,7 +14,7 @@ const withLockScroll = (isElementFixed: boolean = false) =>
   <P extends object>(Component: React.ComponentType<P & ScrollLock>) =>
     class extends React.Component<P> {
 
-      public isSafariBrowser = window.navigator.userAgent.includes('Safari')
+      public isSafariBrowser = canUseDOM && window.navigator.userAgent.includes('Safari')
       public componentWillUnmount() {
         clearAllBodyScrollLocks()
       }
