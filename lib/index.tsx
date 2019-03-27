@@ -2,6 +2,7 @@ import { clearAllBodyScrollLocks, disableBodyScroll } from 'body-scroll-lock'
 import canUseDOM from 'can-use-dom'
 import * as React from 'react'
 
+const MOBILE_WIDTH = 767
 export interface ScrollLock {
   bodyScrolling: {
     lock: () => void,
@@ -12,6 +13,8 @@ export interface ScrollLock {
 const withLockScroll = (isElementFixed: boolean = false) =>
   <P extends object>(Component: React.ComponentType<P & ScrollLock>) =>
     class extends React.Component<P> {
+
+      public isSafariBrowser = window.navigator.userAgent.includes('Safari')
       public componentWillUnmount() {
         clearAllBodyScrollLocks()
       }
@@ -24,16 +27,27 @@ const withLockScroll = (isElementFixed: boolean = false) =>
 
         return <Component {...this.props} bodyScrolling={bodyScrolling} />
       }
+
       public lockBodyScroll = () => {
         disableBodyScroll()
 
+        if (this.isSafariBrowser && window.innerWidth < MOBILE_WIDTH) {
+          // need for mobile safari
+          document.body.style.position = 'fixed'
+        }
+
         if (isElementFixed && canUseDOM) {
+          // need for fixed elements with height more than window height
           document.body.style.position = 'fixed'
         }
       }
 
       public unlockBodyScroll = () => {
         clearAllBodyScrollLocks()
+
+        if (this.isSafariBrowser && window.innerWidth < MOBILE_WIDTH) {
+          document.body.style.position = 'static'
+        }
 
         if (isElementFixed && canUseDOM) {
           document.body.style.position = 'static'
