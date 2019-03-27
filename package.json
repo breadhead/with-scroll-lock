@@ -1,6 +1,6 @@
 {
   "name": "@breadhead/with-scroll-lock",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "passes props for locking and unlocking body scroll to React component",
   "main": "dist/index.js",
   "author": "Vladimir Golotin <uncleseneca@gmail.com>",
@@ -13,7 +13,8 @@
     "build": "tsc",
     "prepare": "install-self-peers -- --ignore-scripts && yarn build",
     "ci": "yarn lint",
-    "lint": "tslint -p tsconfig.json -c tslint.json"
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
