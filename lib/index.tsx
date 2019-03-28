@@ -13,8 +13,10 @@ export interface ScrollLock {
 const withLockScroll = (isElementFixed: boolean = false) =>
   <P extends object>(Component: React.ComponentType<P & ScrollLock>) =>
     class extends React.Component<P> {
+      // i taked it from body-scroll-lock lib
+      public isIosDevice = typeof window !== 'undefined' && window.navigator &&
+      window.navigator.platform && /iP(ad|hone|od)/.test(window.navigator.platform)
 
-      public isSafariBrowser = canUseDOM && window.navigator.userAgent.includes('Safari')
       public componentWillUnmount() {
         clearAllBodyScrollLocks()
       }
@@ -31,7 +33,7 @@ const withLockScroll = (isElementFixed: boolean = false) =>
       public lockBodyScroll = () => {
         disableBodyScroll()
 
-        if (this.isSafariBrowser && window.innerWidth < MOBILE_WIDTH) {
+        if (this.isIosDevice && window.innerWidth < MOBILE_WIDTH) {
           // need for mobile safari
           document.body.style.position = 'fixed'
         }
@@ -45,7 +47,7 @@ const withLockScroll = (isElementFixed: boolean = false) =>
       public unlockBodyScroll = () => {
         clearAllBodyScrollLocks()
 
-        if (this.isSafariBrowser && window.innerWidth < MOBILE_WIDTH) {
+        if (this.isIosDevice && window.innerWidth < MOBILE_WIDTH) {
           document.body.style.position = 'static'
         }
 
