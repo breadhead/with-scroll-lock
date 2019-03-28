@@ -13,7 +13,7 @@ export interface ScrollLock {
 const withLockScroll = (isElementFixed: boolean = false) =>
   <P extends object>(Component: React.ComponentType<P & ScrollLock>) =>
     class extends React.Component<P> {
-      // i taked it from body-scroll-lock lib
+      // i took it from body-scroll-lock lib
       public isIosDevice = typeof window !== 'undefined' && window.navigator &&
       window.navigator.platform && /iP(ad|hone|od)/.test(window.navigator.platform)
 
