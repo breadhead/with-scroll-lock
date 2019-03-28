@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/breadhead/with-scroll-lock/compare/v1.2.1...v1.2.2) (2019-03-28)
+
+
+### Bug Fixes
+
+* **global:** replace isSafariBrowser to isIosDevice ([5447c16](https://github.com/breadhead/with-scroll-lock/commit/5447c16))
+* **global:** update comment ([896390e](https://github.com/breadhead/with-scroll-lock/commit/896390e))
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/breadhead/with-scroll-lock/compare/v1.2.0...v1.2.1) (2019-03-27)
 

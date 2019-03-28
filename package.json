@@ -1,6 +1,6 @@
 {
   "name": "@breadhead/with-scroll-lock",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "passes props for locking and unlocking body scroll to React component",
   "main": "dist/index.js",
   "author": "Vladimir Golotin <uncleseneca@gmail.com>",
